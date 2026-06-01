@@ -1,4 +1,15 @@
 {
+  "name": "makal-searching-fullstack",
+  "version": "1.0.0",
+  "description": "Fullstack project with React, Vite and Express API",
+  "main": "index.js",
+  "scripts": {
+    "install:all": "npm install && npm install --prefix backend && npm install --prefix frontend",
+    "backend": "npm run dev --prefix backend",
+    "frontend": "npm run dev --prefix frontend",
+    "dev": "concurrently \"npm run backend\" \"npm run frontend\"",
+    "start": "npm start --prefix backend"
+  },
   "dependencies": {
     "cors": "^2.8.6",
     "dotenv": "^17.4.2",
@@ -6,24 +17,7 @@
     "jsonwebtoken": "^9.0.3",
     "pg": "^8.21.0"
   },
-  "name": "makal-projetof-1",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "start": "node index.js",
-    "dev": "node --watch index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/abatisella-dotcom/MAKAL-projetof.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/abatisella-dotcom/MAKAL-projetof/issues"
-  },
-  "homepage": "https://github.com/abatisella-dotcom/MAKAL-projetof#readme"
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
 }
