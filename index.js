@@ -12,15 +12,15 @@ app.use(cors());
 app.use(express.json());
 
 // Servir arquivos estáticos do frontend (IniciandoJWT)
-app.use(express.static(path.join(__dirname, 'learning/iniciandoJTW-main/FRONTEND')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // ============================================================
-// USUÁRIO DE MENTIRINHA FIXO (MOCK USER)
+// USUÁRIOS DE MENTIRINHA FIXOS (MOCK USERS)
 // ============================================================
-const USUARIO_DE_MENTIRINHA = {
-    username: 'admin',
-    password: '123'
-};
+const USUARIOS_DE_MENTIRINHA = [
+    { username: 'admin', password: '123' },
+    { username: 'aluno', password: '123' }
+];
 
 // ============================================================
 // ROTA DE LOGIN
@@ -28,12 +28,16 @@ const USUARIO_DE_MENTIRINHA = {
 app.post('/login', (req, res) => {
     const { username, password } = req.body;
 
-    // Compara o que foi digitado com o usuário de mentirinha
-    if (username === USUARIO_DE_MENTIRINHA.username && password === USUARIO_DE_MENTIRINHA.password) {
+    // Procura o usuário cadastrado
+    const usuario = USUARIOS_DE_MENTIRINHA.find(
+        u => u.username.toLowerCase() === username.toLowerCase() && u.password === password
+    );
+
+    if (usuario) {
         const jwt = require('jsonwebtoken');
         // Gera o token com o ID 1 e tempo de expiração de 1 hora
-        const token = jwt.sign({ userId: 1 }, SEGREDO, { expiresIn: '1h' });
-        return res.json({ auth: true, token: token });
+        const token = jwt.sign({ userId: 1, username: usuario.username }, SEGREDO, { expiresIn: '1h' });
+        return res.json({ auth: true, token: token, username: usuario.username });
     }
 
     // Se errar as credenciais
