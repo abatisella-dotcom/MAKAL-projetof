@@ -2,6 +2,9 @@
 const express = require('express');
 const router = express.Router();
 
+// Importar o Middleware de Autenticação JWT
+const { verificarToken } = require('../config/auth');
+
 // Importar as funções do Controller
 const vestibularController = require('../controllers/vestibularControllers');
 
@@ -9,23 +12,23 @@ const vestibularController = require('../controllers/vestibularControllers');
 // DEFINIÇÃO DAS ROTAS
 // ============================================================
 
-// GET /vestibulars - Listar todos os vestibulars
+// GET /vestibulares - Listar todos os vestibulares (PÚBLICO)
 router.get('/', vestibularController.listarTodos);
 
-// GET /vestibulars/nome/:nome_vest - Buscar por nome
+// GET /vestibulares/nome/:nome_vest - Buscar por nome (PÚBLICO)
 router.get('/nome/:nome_vest', vestibularController.buscarPornome);
 
-// GET /vestibulars/:id_vest - Buscar vestibular específico por ID
+// GET /vestibulares/:id_vest - Buscar vestibular específico por ID (PÚBLICO)
 router.get('/:id_vest', vestibularController.buscarPorid);
 
-// POST /vestibulars - Criar novo vestibular
-router.post('/', vestibularController.criar);
+// POST /vestibulares - Criar novo vestibular (PROTEGIDO)
+router.post('/', verificarToken, vestibularController.criar);
 
-// PUT /vestibulars/:id_vest - Atualizar vestibular
-router.put('/:id_vest', vestibularController.atualizar);
+// PUT /vestibulares/:id_vest - Atualizar vestibular (PROTEGIDO)
+router.put('/:id_vest', verificarToken, vestibularController.atualizar);
 
-// DELETE /vestibulars/:id_vest - Deletar vestibular
-router.delete('/:id_vest', vestibularController.deletar);
+// DELETE /vestibulares/:id_vest - Deletar vestibular (PROTEGIDO)
+router.delete('/:id_vest', verificarToken, vestibularController.deletar);
 
 // ============================================================
 // EXPORTAR O ROUTER
