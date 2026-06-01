@@ -1,35 +1,40 @@
-import React, { useState, useEffect } from 'react';
-import Login from './pages/Login';
-import Home from './pages/Home';
+import { Link, Route, Routes } from 'react-router-dom';
+import Home from './pages/home/Home';
+import Sobre from './pages/sobre/Sobre';
+import Contato from './pages/contato/Contato';
+import Produtos from './pages/Produtos/Produtos';
+import Equipe from './pages/Equipe/Equipe';
+import './app.css'
 
 function App() {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-
-  useEffect(() => {
-    // Verificar se o usuário já tem um token salvo no localStorage
-    const token = localStorage.getItem('jwt-token');
-    if (token) {
-      setIsAuthenticated(true);
-    }
-  }, []);
-
-  const handleLoginSuccess = () => {
-    setIsAuthenticated(true);
-  };
-
-  const handleLogout = () => {
-    setIsAuthenticated(false);
-  };
-
   return (
-    <>
-      {isAuthenticated ? (
-        <Home onLogout={handleLogout} />
-      ) : (
-        <Login onLoginSuccess={handleLoginSuccess} />
-      )}
-    </>
-  );
+    <div className="app-shell">
+      <div className="bkg">
+        <header className="topbar">
+          <nav className="menu">
+            <Link to="/sobre">sobre</Link>
+            <Link to="/contato">contato</Link>
+            <Link to="/">HOME</Link>
+            <Link to="/produtos">produtos</Link>
+            <Link to="/equipe">nossa equipe</Link>
+          </nav>
+        </header>
+
+  <main className="content">
+    <Routes>
+      <Route path="/sobre" element={<Sobre />} />
+      <Route path="/contato" element={<Contato />} />
+      <Route path="/" element={<Home />} />
+      <Route path="/produtos" element={<Produtos />} />
+      <Route path="/equipe" element={<Equipe />} />
+    </Routes>
+  </main>
+</div>
+<footer className="footer">
+  <p>&copy; MAKALGROUP . Todos os direitos reservados.</p>
+</footer>
+    </div>
+  )
 }
 
 export default App;
