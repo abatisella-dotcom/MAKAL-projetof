@@ -1,8 +1,7 @@
 // src/config/database.js
 
-console.log('⚡ Utilizando BANCO DE DADOS EM MEMÓRIA (Sem PostgreSQL necessário)!');
+console.log('JWT FUNCIONANDO');
 
-// Bancos de dados em memória de mentirinha
 const dbs = {
   conteudo: [
     { id_conteudo: 1, nome_conteudo: 'Matemática Básica' },
@@ -30,27 +29,27 @@ const pool = {
   connect: (callback) => {
     console.log('✅ Conectado com sucesso ao Banco de Dados em Memória de Mentirinha!');
     if (callback) {
-      callback(null, {}, () => {});
+      callback(null, {}, () => { });
     }
   },
-  
+
   query: async (sql, params = []) => {
     const queryLower = sql.toLowerCase();
-    
+
     // Identifica qual tabela está sendo consultada na SQL
     let tableName = 'conteudo';
     if (queryLower.includes('vestibular')) tableName = 'vestibular';
     else if (queryLower.includes('infoad')) tableName = 'infoad';
     else if (queryLower.includes('pergunta')) tableName = 'pergunta';
     else if (queryLower.includes('resposta')) tableName = 'resposta';
-    
+
     const db = dbs[tableName];
-    
+
     // Identifica a chave primária correta da tabela
-    const idKey = tableName === 'conteudo' ? 'id_conteudo' : 
-                  tableName === 'vestibular' ? 'id_vest' : 
-                  tableName === 'infoad' ? 'id_infoad' : 
-                  tableName === 'pergunta' ? 'id_pergunta' : 'id_resposta';
+    const idKey = tableName === 'conteudo' ? 'id_conteudo' :
+      tableName === 'vestibular' ? 'id_vest' :
+        tableName === 'infoad' ? 'id_infoad' :
+          tableName === 'pergunta' ? 'id_pergunta' : 'id_resposta';
 
     // 1. OPERAÇÃO: INSERT (Criar)
     if (queryLower.includes('insert into')) {
@@ -83,7 +82,7 @@ const pool = {
       return { rows: [], rowCount: 0 };
     }
 
-    // 3. OPERAÇÃO: DELETE (Deletar)
+    // 3. OPERAÇÃO: DELETE (Deletar) 
     if (queryLower.includes('delete from')) {
       const idToFind = params[0];
       const initialLength = db.length;
