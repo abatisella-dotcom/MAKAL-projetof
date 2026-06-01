@@ -1,14 +1,18 @@
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
-const { SEGREDO } = require('./src/config/auth');
+const path = require('path');
+const { SEGREDO, verificarToken } = require('./src/config/auth');
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3050;
 
 // Configurações Globais
 app.use(cors());
 app.use(express.json());
+
+// Servir arquivos estáticos do frontend (IniciandoJWT)
+app.use(express.static(path.join(__dirname, 'learning/iniciandoJTW-main/FRONTEND')));
 
 // ============================================================
 // USUÁRIO DE MENTIRINHA FIXO (MOCK USER)
@@ -37,6 +41,16 @@ app.post('/login', (req, res) => {
 });
 
 // ============================================================
+// ROTA DO PAINEL SECRETO (EXERCÍCIO JWT)
+// ============================================================
+app.get('/painel-secreto', verificarToken, (req, res) => {
+    res.json({ 
+        message: 'Parabéns, você acessou o painel secreto!', 
+        seuId: req.userId 
+    });
+});
+
+// ============================================================
 // IMPORTAÇÃO DAS ROTAS EXISTENTES
 // ============================================================
 const conteudoRoutes = require('./src/routes/conteudoRoutes');
@@ -54,8 +68,8 @@ app.use('/perguntas', perguntaRoutes);
 app.use('/respostas', respostaRoutes);
 app.use('/vestibulares', vestibularRoutes);
 
-// Rota raiz para testar o funcionamento da API
-app.get('/', (req, res) => {
+// Rota de status da API (movida para /api-status para não bloquear o index.html)
+app.get('/api-status', (req, res) => {
     res.json({ message: 'API MAKAL Searching online e protegida! 🚀' });
 });
 
