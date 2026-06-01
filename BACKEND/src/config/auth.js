@@ -2,9 +2,10 @@
 const jwt = require('jsonwebtoken');
 
 // Pega a chave do arquivo .env ou usa uma padrão
-const SEGREDO = process.env.JWT_SECRET || 'minha_chave_super_secreta_123'; 
 
-// Middleware para verificar o token JWT
+const SEGREDO = process.env.JWT_SECRET || 'chave_padrao_mentirinha'; 
+
+// Essa função verifica se quem está acessando tem o Token (a pulseira VIP)
 function verificarToken(req, res, next) {
     const authHeader = req.headers['authorization'];
     const token = authHeader && authHeader.split(' ')[1]; // Pega o token após a palavra 'Bearer'
@@ -19,7 +20,8 @@ function verificarToken(req, res, next) {
         }
         
         req.userId = decoded.userId; // Salva o ID que estava dentro do token
-        next(); // Permite o acesso à rota
+
+        next(); // Permite que a pessoa acesse a rota
     });
 }
 
