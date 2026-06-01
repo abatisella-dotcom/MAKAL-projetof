@@ -1,0 +1,72 @@
+.homePage {
+    width: 30cm;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.title {
+    color: #ffffff;
+    
+}
+
+h2 {
+
+  font-family: "Rubik", sans-serif;
+  font-weight: bolder;
+  letter-spacing: -4px;
+  font-size: 2cm;
+  color: rgb(255, 255, 255);
+  line-height: 2cm;
+  margin: 0.8cm;
+  text-shadow: 0 0 20px #0037CD;
+  margin-top: 0cm;
+
+}
+
+p {
+    
+     font-family: "Rubik", sans-serif;
+     padding: 15px;
+     padding-left: 20px;
+     padding-right: 20px;
+     text-align: center;
+    }
+    
+    .divbranca1 {
+    margin-top: 1cm;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 50px;
+    width: 20cm;
+    color: #0037CD;
+    margin-bottom: 3cm;
+
+}
+
+.Cardsgrid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.fleshcards {
+    display: flex;
+    flex-direction: column;
+
+    h1{
+        font-family: "Rubik", sans-serif;
+        color: #000000;
+        font-size: 1.5cm;
+        text-align: center;
+    }
+
+    p{
+        font-family: "Rubik", sans-serif;
+        color: #000000;
+        text-align: left;
+    }
+}
