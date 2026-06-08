@@ -39,14 +39,11 @@ export default function Login({ onLoginSuccess }) {
 
   return (
     <div className="login-page-wrapper">
-      <header>
-        Exercício Autenticação JWT — MAKAL GROUP
-      </header>
       
       <div className="app">
         <div className="container">
           <div id="login-section">
-            <h1>MAKAL</h1>
+            <h1>MakalQuest</h1>
             <h2 style={{ fontSize: '1.1rem', color: '#94a3b8', marginBottom: '1.5rem', marginTop: '-0.3rem' }}>
               Estude com Inteligência.
             </h2>
@@ -75,17 +72,7 @@ export default function Login({ onLoginSuccess }) {
             
             {message && <p id="login-message">{message}</p>}
             
-            <div style={{ 
-              marginTop: '1.5rem', 
-              paddingTop: '1rem',
-              borderTop: '1px solid rgba(255,255,255,0.06)',
-              fontSize: '0.85rem', 
-              color: '#64748b',
-              lineHeight: '1.5'
-            }}>
-              💡 <strong>Dica de Teste:</strong><br />
-              username: <strong style={{ color: '#a5b4fc' }}>admin</strong> &nbsp;|&nbsp; senha: <strong style={{ color: '#a5b4fc' }}>123</strong>
-            </div>
+            
           </div>
         </div>
       </div>
