@@ -6,14 +6,14 @@ const pool = require('../config/database');
 
 async function listarTodos() {
   const result = await pool.query(
-    'SELECT * FROM perguntaview ORDER BY id_pergunta'
+    'SELECT * FROM pergunta ORDER BY id_pergunta'
   );
   return result.rows;
 }
 
 async function buscarPorid(id_pergunta) {
   const result = await pool.query(
-    'SELECT * FROM perguntaview WHERE id_pergunta = $1',
+    'SELECT * FROM pergunta WHERE id_pergunta = $1',
     [id_pergunta]
   );
 

@@ -1,45 +1,202 @@
-.produtos-container {
-  padding: 2rem;
-  max-width: 800px;
-  margin: 0 auto;
-  color: #fff;
-  font-family: sans-serif;
+.produtosContainer {
+  padding: 40px;
+  background-color: #ffffff;
+  min-height: 100vh;
+  color: #333;
 }
 
-.produtos-titulo {
+.produtosTitulo {
+  text-align: center;
   font-size: 2.5rem;
-  margin-bottom: 1.5rem;
-  background: linear-gradient(45deg, #ff7b00, #ffae00);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  margin-bottom: 30px;
+  color: #186f64;
+  font-weight: 700;
 }
 
-.produtos-intro {
-  font-size: 1.2rem;
-  line-height: 1.8;
-  color: #ddd;
+.filtrosWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 40px;
 }
 
-.produtos-grid {
+.filtrosContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+
+.inputFiltro {
+  padding: 12px 16px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  width: 200px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  background-color: #fff;
+}
+
+.inputFiltro:focus {
+  border-color: #1a4bba;
+  outline: none;
+  box-shadow: 0 4px 8px rgba(26, 75, 186, 0.2);
+}
+
+.filtrosBotoes {
+  display: flex;
+  gap: 12px;
+}
+
+.btnPesquisar {
+  background-color: #00826e;
+  color: white;
+  border: none;
+  padding: 12px 32px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.btnPesquisar:hover {
+  background-color: #11368f;
+  transform: translateY(-1px);
+}
+
+.btnLimpar {
+  background-color: #e0e0e0;
+  color: #555;
+  border: none;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btnLimpar:hover {
+  background-color: #ccc;
+}
+
+.resultadosInfo {
+  text-align: center;
+  color: #555;
+  margin-bottom: 20px;
+  font-size: 0.95rem;
+}
+
+.erroText {
+  text-align: center;
+  color: #c0392b;
+  background: #fdecea;
+  padding: 14px 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.cardsGrid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem;
-  margin-top: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+  justify-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.produto-card {
-  padding: 1.5rem;
-  background-color: rgba(255, 255, 255, 0.05);
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+.cardQuestao {
+  background-color: #64b6ac;
+  /* Azul forte do mockup */
+  border-radius: 20px;
+  width: 100%;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.produto-nome {
-  margin: 0 0 0.5rem 0;
-  color: #ffae00;
+.cardQuestao:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
 }
 
-.produto-descricao {
+.cardHeader {
+  padding: 20px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.conteudoTitulo {
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: 700;
   margin: 0;
-  color: #ccc;
+  text-transform: uppercase;
+}
+
+.cardBody {
+  padding: 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #007d72;
+}
+
+.perguntaPreview {
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-style: italic;
+  margin-bottom: 25px;
+  text-align: center;
+  line-height: 1.4;
+}
+
+.btnVerQuestao {
+  background-color: #e0e0e0;
+  color: #333;
+  border: none;
+  padding: 10px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btnVerQuestao:hover {
+  background-color: #ffffff;
+}
+
+.cardFooter {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 20px;
+  background-color: #154f4c;
+  /* Azul ainda mais escuro para o rodapé */
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.8rem;
+  text-transform: lowercase;
+}
+
+.loadingText {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #1a4bba;
+  margin-top: 50px;
+}
+
+.noResults {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #666;
+  margin-top: 50px;
+  grid-column: 1 / -1;
 }

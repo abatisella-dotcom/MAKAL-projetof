@@ -1,0 +1,160 @@
+.questaoContainer {
+  padding: 40px;
+  min-height: 100vh;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.btnVoltar {
+  align-self: flex-start;
+  background-color: #e0e0e0;
+  color: #333;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 30px;
+  font-weight: 600;
+  transition: background-color 0.2s;
+}
+
+.btnVoltar:hover {
+  background-color: #ccc;
+}
+
+.loadingContainer,
+.errorContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 1.5rem;
+  color: #1a4bba;
+}
+
+.cardDetalhe {
+  background-color: #ffffff;
+  width: 100%;
+  max-width: 800px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  padding: 40px;
+  border-top: 8px solid #00a78b;
+}
+
+.headerInfo {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 20px;
+}
+
+.badge,
+.badgeConteudo,
+.badgeNivel {
+  background-color: #f0f4ff;
+  color: #1a4bba;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.badgeConteudo {
+  background-color: #e6ffed;
+  color: #1b5e20;
+}
+
+.badgeNivel {
+  background-color: #fff3e0;
+  color: #e65100;
+}
+
+.enunciadoContainer {
+  margin-bottom: 40px;
+}
+
+.enunciadoTitulo {
+  font-size: 1.4rem;
+  letter-spacing: 1px;
+  color: #038782;
+  margin-bottom: 15px;
+}
+
+.enunciadoTexto {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: #444;
+  white-space: pre-wrap;
+  /* Preserva quebras de linha caso haja alternativas na string */
+}
+
+.respostaSection {
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  padding: 25px;
+  border: 1px solid #eee;
+}
+
+.btnMostrarResposta {
+  background-color: #005f4a;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  width: 100%;
+  transition: background-color 0.2s;
+}
+
+.btnMostrarResposta:hover {
+  background-color: #11368f;
+}
+
+.respostaBox {
+  margin-top: 25px;
+  animation: fadeIn 0.4s ease;
+}
+
+.respostaBox h3 {
+  color: #2e7d32;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.respostaBox p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+.materialApoio {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px dashed #ccc;
+}
+
+.materialApoio h4 {
+  color: #1a4bba;
+  margin-bottom: 10px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
