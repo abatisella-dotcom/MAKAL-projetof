@@ -36,7 +36,7 @@ function App() {
     <div className="app-shell">
       <div className="bkg">
         <header className="topbar">
-          <NavLink to="/" className="brand">MAKAL</NavLink>
+          <NavLink to="/" className="brand">MAKAL QUEST</NavLink>
           <nav className="menu">
             <NavLink to="/">Home</NavLink>
             <NavLink to="/produtos">Produtos</NavLink>
@@ -56,7 +56,7 @@ function App() {
           </Routes>
         </main>
 
-        
+
       </div>
       <footer className="footer">
         <p>&copy; MAKALGROUP. Todos os direitos reservados.</p>
