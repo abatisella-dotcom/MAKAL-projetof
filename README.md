@@ -6,9 +6,6 @@ Plataforma educacional de flashcards dinâmicos para vestibulares, com recupera�
 
 ## 📋 Pré-requisitos
 
-- [Node.js](https://nodejs.org/) (versão 18 ou superior)
-- VS Code (recomendado)
-
 ---
 
 ## 🚀 Como rodar o projeto
