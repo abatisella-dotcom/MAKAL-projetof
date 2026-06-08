@@ -1,3 +1,14 @@
+const fs = require('fs');
+const pathModule = require('path');
+
+// Auto-setup: cria o .env a partir do .env.example se não existir
+const envPath = pathModule.join(__dirname, '.env');
+const envExamplePath = pathModule.join(__dirname, '.env.example');
+if (!fs.existsSync(envPath) && fs.existsSync(envExamplePath)) {
+  fs.copyFileSync(envExamplePath, envPath);
+  console.log('📋 Arquivo .env criado automaticamente a partir do .env.example');
+}
+
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
