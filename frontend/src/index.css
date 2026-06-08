@@ -1,25 +1,14 @@
 /* Scoped Styles for JWT Login Screen */
 
 
+
+
 .login-page-wrapper  {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-.login-page-wrapper header {
-    width: 100%;
-    text-align: center;
-    padding: 1.2rem;
-    font-size: 1.1rem;
-    font-weight: 600;
-    letter-spacing: 1px;
-    background: rgba(15, 23, 42, 0.6);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    color: #a5b4fc;
-    text-transform: uppercase;
-}
 
 .login-page-wrapper .app {
     display: flex;
@@ -28,10 +17,11 @@
     align-items: center;
     flex-grow: 1;
     padding: 2rem;
+    height: 92.5vh;
 }
 
 .login-page-wrapper .container {
-    background: rgba(30, 41, 59, 0.45);
+    background-color: #5d737e;
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     border: 1px solid rgba(255, 255, 255, 0.08);
@@ -44,19 +34,14 @@
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.login-page-wrapper .container:hover {
-    border-color: rgba(255, 255, 255, 0.15);
-    box-shadow: 0 12px 40px 0 rgba(99, 102, 241, 0.15);
-}
+
 
 .login-page-wrapper h1 {
     font-size: 2.2rem;
+    color: #4338ca;
     font-weight: 700;
     margin-bottom: 0.5rem;
-    background: linear-gradient(to right, #6366f1, #a855f7, #ec4899);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: login-pulse 2s infinite alternate;
+    color: #e2e8f0;
 }
 
 .login-page-wrapper h2 {
