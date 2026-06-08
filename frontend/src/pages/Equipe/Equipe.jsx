@@ -42,7 +42,7 @@ function Home() {
     <section className={styles.homePage}>
       <h2 className={styles.title}></h2>
       <h2 className= {styles.sobrenostexto}>
-        Representantes do MakalGroup 
+        Nossas Representantes 
       </h2>
       <div className={styles.divbranca1}>  
       </div>

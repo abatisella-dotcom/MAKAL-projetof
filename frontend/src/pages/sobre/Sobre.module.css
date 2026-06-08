@@ -7,7 +7,7 @@
 }
 
 .sobre-titulo {
-  font-size: 2.5rem;
+  font-size: 66px;
   color: #64b6ac;
   text-shadow: 0 0 20px #68cfc3;
 }
@@ -15,12 +15,12 @@
 .sobre-texto-principal {
   font-size: 1.2rem;
   line-height: 1.8;
-  color: #ddd;
+  color: #5d737e;
 }
 
 .sobre-texto-secundario {
   font-size: 1.1rem;
   line-height: 1.8;
-  color: #aaa;
+  color: #5d737e;
   margin-top: 1rem;
 }
