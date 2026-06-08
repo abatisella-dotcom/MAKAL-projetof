@@ -1,18 +1,28 @@
 const express = require('express');
 const router = express.Router();
-const conteudoController = require('../controllers/conteudoControllers');
-const { verificarToken } = require('../config/auth'); // Importa o middleware
 
-// GET /conteudos - Listar todos os conteudos (público)
+const conteudoController =
+  require('../controllers/conteudoControllers');
+
+// buca por conteudo
+router.get( '/conteudo/:nome', conteudoController.buscaPorConteudo
+);
+
+
 router.get('/', conteudoController.listarTodos);
 
-// POST /conteudos - Criar novo conteudo (protegido por JWT)
-router.post('/', verificarToken, conteudoController.criar);
+router.get( '/nome/:nome', conteudoController.buscarPornome
+);
 
-// PUT /conteudos/:id_conteudo - Atualizar (protegido por JWT)
-router.put('/:id_conteudo', verificarToken, conteudoController.atualizar);
+router.get( '/:id_conteudo', conteudoController.buscarPorid
+);
 
-// DELETE /conteudos/:id_conteudo - Deletar (protegido por JWT)
-router.delete('/:id_conteudo', verificarToken, conteudoController.deletar);
+router.post('/', conteudoController.criar);
+
+router.put( '/:id_conteudo', conteudoController.atualizar
+);
+
+router.delete( '/:id_conteudo', conteudoController.deletar
+);
 
 module.exports = router;

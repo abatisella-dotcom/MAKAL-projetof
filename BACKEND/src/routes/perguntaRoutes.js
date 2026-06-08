@@ -1,33 +1,41 @@
-// Importar o Express para criar o router
 const express = require('express');
 const router = express.Router();
 
-// Importar as funções do Controller
-const perguntaController = require('../controllers/perguntaControllers');
+const perguntaController =
+require('../controllers/perguntaControllers');
 
-// ============================================================
-// DEFINIÇÃO DAS ROTAS
-// ============================================================
+// ======================
+// VIEWS
+// ======================
 
-// GET /perguntas - Listar todos os perguntas
-router.get('/', perguntaController.listarTodos);
+router.get( '/ano/:ano', perguntaController.perguntaAnoView
+);
 
-// GET /perguntas/nome/:nome - Buscar por nome
-router.get('/nome/:nome', perguntaController.buscarPornome);
+router.get( '/completa', perguntaController.viewCompleta
+);
 
-// GET /perguntas/:id_pergunta - Buscar pergunta específico por ID
-router.get('/:id_pergunta', perguntaController.buscarPorid);
+// ======================
+// BUSCAS
+// ======================
 
-// POST /perguntas - Criar novo pergunta
-router.post('/', perguntaController.criar);
+router.get( '/nome/:nome', perguntaController.buscarPornome
+);
 
-// PUT /perguntas/:id_pergunta - Atualizar pergunta
-router.put('/:id_pergunta', perguntaController.atualizar);
 
-// DELETE /perguntas/:id_pergunta - Deletar pergunta
-router.delete('/:id_pergunta', perguntaController.deletar);
 
-// ============================================================
-// EXPORTAR O ROUTER
-// ============================================================
+router.get( '/', perguntaController.listarTodos
+);
+
+router.get( '/:id_pergunta', perguntaController.buscarPorid
+);
+
+router.post( '/', perguntaController.criar
+);
+
+router.put( '/:id_pergunta', perguntaController.atualizar
+);
+
+router.delete( '/:id_pergunta', perguntaController.deletar
+);
+
 module.exports = router;
