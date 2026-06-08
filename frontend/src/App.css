@@ -15,10 +15,11 @@
 
 body {
   margin: 0;
-  background: linear-gradient(135deg, #0f172a 0%, #002ead 100%);
+  background-color: white;
   min-height: 100vh;
   font-family: "Rubik", sans-serif;
   color: #f8fafc;
+
 }
 
 #root {
@@ -29,6 +30,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  
 }
 
 .bkg {
