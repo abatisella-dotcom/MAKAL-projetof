@@ -5,8 +5,7 @@ function Home() {
     <section className={styles.homePage}>
       <h2 className={styles.title}></h2>
       <h2>
-        Estude com Inteligência. <br />
-        Passe com Confiança.
+        Estude com Inteligência. Passe com Confiança.
       </h2>
       <div className={styles.divbranca1}>
         <p>
