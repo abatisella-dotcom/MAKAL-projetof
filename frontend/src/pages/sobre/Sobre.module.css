@@ -1,0 +1,28 @@
+.sobre-container {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  color: #fff;
+  font-family: sans-serif;
+}
+
+.sobre-titulo {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(45deg, #ff7b00, #ffae00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.sobre-texto-principal {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #ddd;
+}
+
+.sobre-texto-secundario {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #aaa;
+  margin-top: 1rem;
+}

@@ -3,7 +3,6 @@ import { NavLink, Route, Routes } from 'react-router-dom';
 import Login from './pages/Login';
 import Home from './pages/Home/Home';
 import Sobre from './pages/sobre/Sobre';
-import Contato from './pages/contato/Contato';
 import Produtos from './pages/Produtos/Produtos';
 import Equipe from './pages/Equipe/Equipe';
 import './App.css';
@@ -43,7 +42,6 @@ function App() {
             <NavLink to="/produtos">Produtos</NavLink>
             <NavLink to="/sobre">Sobre</NavLink>
             <NavLink to="/equipe">Nossa Equipe</NavLink>
-            <NavLink to="/contato">Contato</NavLink>
             <button onClick={handleLogout} className="logout-btn">Sair</button>
           </nav>
         </header>
@@ -51,14 +49,14 @@ function App() {
         <main className="content">
           <Routes>
             <Route path="/sobre" element={<Sobre />} />
-            <Route path="/contato" element={<Contato />} />
             <Route path="/" element={<Home />} />
             <Route path="/produtos" element={<Produtos />} />
             <Route path="/equipe" element={<Equipe />} />
-            {/* Wildcard fallback route to guarantee Home is displayed */}
             <Route path="*" element={<Home />} />
           </Routes>
         </main>
+
+        
       </div>
       <footer className="footer">
         <p>&copy; MAKALGROUP. Todos os direitos reservados.</p>
