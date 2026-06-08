@@ -1,5 +1,6 @@
 /* Scoped Styles for JWT Login Screen */
 
+
 .login-page-wrapper {
     font-family: 'Outfit', sans-serif;
     background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #311042 100%);
@@ -26,7 +27,7 @@
     font-size: 1.1rem;
     font-weight: 600;
     letter-spacing: 1px;
-    background: rgba(15, 23, 42, 0.6);
+    background: rgba(255, 255, 255, 0.6);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     color: #a5b4fc;
@@ -43,7 +44,7 @@
 }
 
 .login-page-wrapper .container {
-    background: rgba(30, 41, 59, 0.45);
+    background: rgba(192, 192, 192, 0.45);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     border: 1px solid rgba(255, 255, 255, 0.08);
@@ -149,6 +150,7 @@
     0% {
         transform: scale(1);
     }
+
     100% {
         transform: scale(1.02);
     }

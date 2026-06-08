@@ -18,10 +18,10 @@ Plataforma educacional de flashcards dinâmicos para vestibulares, com recupera�
 Abra o terminal na pasta raiz do projeto e execute:
 
 ```bash
-npm install
+npm run install:all
 ```
 
-> Isso instalará automaticamente as dependências da raiz, do `backend/` e do `frontend/`.
+> Isso instalará de forma segura as dependências do `backend/` e do `frontend/` sem causar loops recursivos no Windows.
 
 ### Passo 2: Rodar o Backend
 
