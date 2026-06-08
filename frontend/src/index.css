@@ -1,19 +1,7 @@
 /* Scoped Styles for JWT Login Screen */
 
-.login-page-wrapper {
-    font-family: 'Outfit', sans-serif;
-    background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #311042 100%);
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    color: #f8fafc;
-    overflow-x: hidden;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
-.login-page-wrapper * {
+.login-page-wrapper  {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
