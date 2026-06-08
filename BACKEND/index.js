@@ -29,8 +29,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 // USUÁRIOS DE MENTIRINHA FIXOS (MOCK USERS)
 // ============================================================
 const USUARIOS_DE_MENTIRINHA = [
-    { username: 'admin', password: '123' },
-    { username: 'aluno', password: '123' }
+    {
+        username: process.env.AUTH_USER,
+        password: process.env.AUTH_PASSWORD
+    },
 ];
 
 // ============================================================
