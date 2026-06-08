@@ -1,58 +1,63 @@
-.equipe-container {
-  padding: 2rem;
-  max-width: 800px;
-  margin: 0 auto;
-  color: #fff;
-  font-family: sans-serif;
+.homePage {
+    width: 30cm;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
-.equipe-titulo {
-  font-size: 2.5rem;
-  margin-bottom: 1.5rem;
-  background: linear-gradient(45deg, #ff7b00, #ffae00);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.title {
+    color: #ffffff; 
 }
 
-.equipe-intro {
-  font-size: 1.2rem;
-  line-height: 1.8;
-  color: #ddd;
+body {
+    margin: 0;
+    background: #fffcfc;
+    min-height: 100vh;
+    font-family: "Rubik", sans-serif;
+    color: #1f2937;
 }
 
-.equipe-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1.5rem;
-  margin-top: 2rem;
+.sobrenostexto {
+
+  font-family: "Rubik", sans-serif;
+  font-weight: bolder;
+  letter-spacing: -2px;
+  font-size: 76px;
+  color: #64b6ac;
+  line-height: 1.3cm;
+  margin: 0px;
+  text-shadow: 0 0 20px #68cfc3;
+  margin-top: 1cm;
+
 }
 
-.equipe-card {
-  padding: 1.5rem;
-  background-color: rgba(255, 255, 255, 0.05);
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  text-align: center;
+p {
+    
+     font-family: "Rubik", sans-serif;
+     padding: 15px;
+     padding-left: 20px;
+     padding-right: 20px;
+     text-align: center;
+    }
+    
+    .divbranca1 {
+    margin-top: 1cm;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 50px;
+    width: 20cm;
+    color: #64b6ac;
+    margin-bottom: 3cm;
+
 }
 
-.equipe-avatar {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  background-color: #ffae00;
-  margin: 0 auto 1rem auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2rem;
-}
-
-.equipe-nome {
-  margin: 0 0 0.2rem 0;
-}
-
-.equipe-cargo {
-  margin: 0;
-  color: #aaa;
-  font-size: 0.9rem;
+.Cardsgrid {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    gap: 0.5rem; 
+    flex-wrap: wrap; 
 }
