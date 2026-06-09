@@ -77,9 +77,7 @@ export default function Login({ onLoginSuccess }) {
         </div>
       </div>
 
-      <footer>
-        &copy; {new Date().getFullYear()} MAKAL GROUP. Todos os direitos reservados.
-      </footer>
+      
     </div>
   );
 }

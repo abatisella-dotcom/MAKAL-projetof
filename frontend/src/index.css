@@ -87,7 +87,7 @@
 .login-page-wrapper button {
     width: 100%;
     padding: 12px;
-    background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+    background-color: rgb(133, 194, 175);
     color: white;
     border: none;
     border-radius: 10px;
@@ -100,8 +100,8 @@
 }
 
 .login-page-wrapper button:hover {
-    background: linear-gradient(135deg, #4f46e5 0%, #4338ca 100%);
     transform: translateY(-2px);
+    background-color: #214234;
     box-shadow: 0 6px 20px rgba(79, 70, 229, 0.4);
 }
 
@@ -116,16 +116,6 @@
     color: #f43f5e;
 }
 
-.login-page-wrapper footer {
-    width: 100%;
-    text-align: center;
-    padding: 1rem;
-    font-size: 0.85rem;
-    color: #ffffff;
-    background: rgba(0, 0, 0, 0.8);
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    margin-top: auto;
-}
 
 @keyframes login-pulse {
     0% {
