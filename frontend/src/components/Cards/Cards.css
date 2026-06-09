@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton+SC&display=swap');
+
+.card-jogo {
+  width: 220px;   
+  height: 320px; 
+  border-radius: 20px;
+  overflow: hidden;
+  background:#ffffff;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card-jogo:hover {
+  transform: scale(1.05);
+}
+
+.card-imagem-container {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.card-imagem {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.card-jogo:hover .card-imagem {
+  transform: scale(1.1);
+  filter: brightness(1.05);
+}
+
+.card-info {
+  padding: 25px 20px 20px;
+  background: linear-gradient(180deg, #ffffff 0%, #ffffff 100%);
+  position: relative;
+  color: #ffdd9f;
+}
+
+.card-titulo {
+  margin: 0 0 10px 0;
+  text-align: center;
+  font-size: 27px;
+  font-weight: 600;
+  font-family: "Anton SC", sans-serif;
+  color: #64b6ac;
+  letter-spacing: 2px;
+  line-height: 1.3;
+ 
+}
+
+.card-conteudo {
+  margin: 0 0 15px 0;
+  font-size: 14px;
+  color: #64b6ac;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: 500;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 6px;
+}
+
+.card-exemplo {
+  margin: 0 0 10px 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #64b6ac;
+  letter-spacing: -0.5px;
+  background-color: #64b6ac;
+  padding: 5px 10px;
+  border-radius: 8px;
+}
+
+.card-codigo {
+  font-size: 18px;
+  font-weight: 600;
+  color: #64b6ac;
+  letter-spacing: -0.5px;
+  padding: 5px 10px;
+  border-radius: 8px;
+}
