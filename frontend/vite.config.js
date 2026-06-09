@@ -7,13 +7,13 @@ export default defineConfig({
   server: {
     port: 5173,
     proxy: {
-      '/login': 'http://localhost:3050',
-      '/conteudos': 'http://localhost:3050',
-      '/infoads': 'http://localhost:3050',
-      '/perguntas': 'http://localhost:3050',
-      '/respostas': 'http://localhost:3050',
-      '/vestibulares': 'http://localhost:3050',
-      '/api-status': 'http://localhost:3050'
+      '/login': 'http://localhost:3000',
+      '/conteudos': 'http://localhost:3000',
+      '/infoads': 'http://localhost:3000',
+      '/perguntas': 'http://localhost:3000',
+      '/respostas': 'http://localhost:3000',
+      '/vestibulares': 'http://localhost:3000',
+      '/api-status': 'http://localhost:3000'
     }
   }
 })
