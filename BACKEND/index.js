@@ -41,9 +41,11 @@ const USUARIOS_DE_MENTIRINHA = [
 app.post('/login', (req, res) => {
     const { username, password } = req.body;
 
-    // Procura o usuário cadastrado
+    // Procura o usuário cadastrado (com verificação de segurança para evitar erros se .env estiver incompleto)
     const usuario = USUARIOS_DE_MENTIRINHA.find(
-        u => u.username.toLowerCase() === username.toLowerCase() && u.password === password
+        u => u.username && u.password &&
+             u.username.toLowerCase() === username.toLowerCase() &&
+             u.password === password
     );
 
     if (usuario) {
