@@ -17,10 +17,12 @@ h2 {
   padding: 1cm;
   text-shadow: 0 0 20px #68cfc3;
   margin-top: 0;
+  text-align: center; 
+  padding-top: 15px;
 }
 
 .divbranca1 {
-  margin-top: 1cm;
+  margin-top: 3cm;
   display: flex;
   justify-content: center;
   align-items: center;

@@ -6,11 +6,9 @@
 }
 
 .sobre-titulo {
-  font-size: 2.5rem;
-  margin-bottom: 1.5rem;
-  background: linear-gradient(45deg, #ff7b00, #ffae00);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  font-size: 66px;
+  color: #64b6ac;
+  text-shadow: 0 0 20px #68cfc3;
 }
 
 .sobre-texto-principal {
