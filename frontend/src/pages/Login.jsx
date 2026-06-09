@@ -44,7 +44,7 @@ export default function Login({ onLoginSuccess }) {
         <div className="container">
           <div id="login-section">
             <h1>MakalQuest</h1>
-            <h2 style={{ fontSize: '1.1rem', color: '#94a3b8', marginBottom: '1.5rem', marginTop: '-0.3rem' }}>
+            <h2>
               Estude com Inteligência.
             </h2>
             

@@ -2,7 +2,6 @@
   padding: 2rem;
   max-width: 800px;
   margin: 0 auto;
-  color: #fff;
   font-family: sans-serif;
 }
 
@@ -16,13 +15,13 @@
 
 .sobre-texto-principal {
   font-size: 1.2rem;
-  line-height: 1.8;
-  color: #ddd;
+  line-height: 40px;
+  color: #c60000;
 }
 
 .sobre-texto-secundario {
   font-size: 1.1rem;
   line-height: 1.8;
-  color: #aaa;
+  color: #282828;
   margin-top: 1rem;
 }

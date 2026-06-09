@@ -30,9 +30,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 // ============================================================
 const USUARIOS_DE_MENTIRINHA = [
     {
-        username: process.env.AUTH_USER,
-        password: process.env.AUTH_PASSWORD
+        username: process.env.AUTH_USER || 'admin',
+        password: process.env.AUTH_PASSWORD || '123'
     },
+    {
+        username: 'aluno',
+        password: '123'
+    }
 ];
 
 // ============================================================
@@ -40,6 +44,10 @@ const USUARIOS_DE_MENTIRINHA = [
 // ============================================================
 app.post('/login', (req, res) => {
     const { username, password } = req.body;
+
+    if (!username || !password) {
+        return res.status(400).json({ auth: false, message: 'Usuário e senha são obrigatórios!' });
+    }
 
     // Procura o usuário cadastrado (com verificação de segurança para evitar erros se .env estiver incompleto)
     const usuario = USUARIOS_DE_MENTIRINHA.find(
