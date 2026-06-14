@@ -140,7 +140,7 @@ function Produtos() {
           />
           <input
             type="text"
-            placeholder="Conteúdo (ex: Física)"
+            placeholder="Conteúdo (ex: Realismo)"
             value={filtroConteudo}
             onChange={(e) => setFiltroConteudo(e.target.value)}
             className={styles.inputFiltro}
