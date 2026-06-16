@@ -13,11 +13,11 @@ import mariaLuisa from '../../assets/imgs/mariaLuisa.png';
 const cards = [
     {
       id: 1, titulo: 'AnaBê',
-      conteudo: '', codigo: "", capa: anabe
+      conteudo: '', codigo: "", capa: anabeatriz
     },
     {
       id: 2, titulo: 'Ana Koso',
-      conteudo: '', codigo: "", capa: eu
+      conteudo: '', codigo: "", capa: analuiza
     },
     {
       id: 3, titulo: 'Maria Manso',
@@ -25,7 +25,7 @@ const cards = [
     },
     {
       id: 4, titulo: 'Maria Alice',
-      conteudo: '', codigo: "", capa: alice
+      conteudo: '', codigo: "", capa: Alice
     },
     {
       id: 5, titulo: 'Maria Dias',
