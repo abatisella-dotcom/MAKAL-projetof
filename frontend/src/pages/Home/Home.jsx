@@ -12,7 +12,7 @@ function Home() {
           Transformando questões reais de vestibulares em aprendizado ativo com flashcards dinâmicos, organizados por matéria e nível de dificuldade.
         </p>
       </div>
-  <h1>Por que usar flashcards?</h1>
+  <h1>Por que utilizar flashcards?</h1>
       <div className={styles.fleshcards}>
 
   <div className={styles.cardzinho}>
@@ -29,7 +29,7 @@ function Home() {
 
   <div className={styles.cardzinho}>
     <p>
-      Esse fenômeno é conhecido como “efeito do teste”: quanto mais você pratica lembrar uma informação, mais forte ela se torna na memória.
+      Este fenômeno é conhecido como “efeito do teste” : Quanto mais você pratica lembrar uma informação, mais forte ela se torna na memória.
     </p>
   </div>
 </div>

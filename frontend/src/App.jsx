@@ -61,7 +61,7 @@ function App() {
 
       </div>
       <footer className="footer">
-        <p>&copy; MAKALGROUP. Todos os direitos reservados.</p>
+        <p>&copy; MAKALGROUP . Todos os direitos reservados.</p>
       </footer>
     </div>
   );

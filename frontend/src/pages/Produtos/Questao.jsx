@@ -76,7 +76,7 @@ function Questao() {
   };
 
   if (loading) {
-    return <div className={styles.loadingContainer}>Carregando questão...</div>;
+    return <div className={styles.loadingContainer}>Carregando questão ...</div>;
   }
 
   if (!questao) {
