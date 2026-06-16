@@ -21,7 +21,7 @@ const cards = [
     },
     {
       id: 3, titulo: 'Maria Manso',
-      conteudo: '', codigo: "", capa: manso
+      conteudo: '', codigo: "", capa: mariamanso
     },
     {
       id: 4, titulo: 'Maria Alice',
@@ -29,7 +29,7 @@ const cards = [
     },
     {
       id: 5, titulo: 'Maria Dias',
-      conteudo: '', codigo: "", capa: mariaLuisa
+      conteudo: '', codigo: "", capa: mariaLuisadias
     },
    
   ];
