@@ -1,3 +1,5 @@
+
+
 const fs = require('fs');
 const pathModule = require('path');
 
@@ -25,19 +27,6 @@ app.use(express.json());
 // Servir arquivos estáticos do frontend (IniciandoJWT)
 app.use(express.static(path.join(__dirname, 'public')));
 
-// ============================================================
-// USUÁRIOS DE MENTIRINHA FIXOS (MOCK USERS)
-// ============================================================
-const USUARIOS_DE_MENTIRINHA = [
-    {
-        username: process.env.AUTH_USER || 'admin',
-        password: process.env.AUTH_PASSWORD || '123'
-    },
-    {
-        username: 'aluno',
-        password: '123'
-    }
-];
 
 // ============================================================
 // ROTA DE LOGIN
@@ -49,18 +38,16 @@ app.post('/login', (req, res) => {
         return res.status(400).json({ auth: false, message: 'Usuário e senha são obrigatórios!' });
     }
 
-    // Procura o usuário cadastrado (com verificação de segurança para evitar erros se .env estiver incompleto)
-    const usuario = USUARIOS_DE_MENTIRINHA.find(
-        u => u.username && u.password &&
-             u.username.toLowerCase() === username.toLowerCase() &&
-             u.password === password
-    );
+    // Pega as credenciais corretas do arquivo .env
+    const usuarioCorreto = process.env.AUTH_USER || 'admin';
+    const senhaCorreta = process.env.AUTH_PASSWORD || '123';
 
-    if (usuario) {
+    // Compara diretamente sem usar nenhum array
+    if (username.toLowerCase() === usuarioCorreto.toLowerCase() && password === senhaCorreta) {
         const jwt = require('jsonwebtoken');
-        // Gera o token com o ID 1 e tempo de expiração de 1 hora
-        const token = jwt.sign({ userId: 1, username: usuario.username }, SEGREDO, { expiresIn: '1h' });
-        return res.json({ auth: true, token: token, username: usuario.username });
+        // Gera o token com o nome do usuário e tempo de expiração de 1 hora
+        const token = jwt.sign({ username: username }, SEGREDO, { expiresIn: '1h' });
+        return res.json({ auth: true, token: token, username: username });
     }
 
     // Se errar as credenciais
