@@ -40,7 +40,8 @@ app.post('/login', (req, res) => {
 
     // Pega as credenciais corretas do arquivo .env
     const usuarioCorreto = process.env.AUTH_USER || 'admin';
-    const senhaCorreta = process.env.AUTH_PASSWORD || '123';
+    const senhaCorreta = process.env.A
+    UTH_PASSWORD || '123';
 
     // Compara diretamente sem usar nenhum array
     if (username.toLowerCase() === usuarioCorreto.toLowerCase() && password === senhaCorreta) {
