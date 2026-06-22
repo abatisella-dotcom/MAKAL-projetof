@@ -1,11 +1,11 @@
-.produtosContainer {
+.questContainer {
   padding: 40px;
   background-color: #ffffff;
   min-height: 100vh;
   color: #333;
 }
 
-.produtosTitulo {
+.questTitulo {
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 30px;

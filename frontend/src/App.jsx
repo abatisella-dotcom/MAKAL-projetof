@@ -3,8 +3,8 @@ import { NavLink, Route, Routes } from 'react-router-dom';
 import Login from './pages/Login';
 import Home from './pages/Home/Home';
 import Sobre from './pages/sobre/Sobre';
-import Produtos from './pages/Produtos/Produtos';
-import Questao from './pages/Produtos/Questao';
+import Quest from './pages/Quest/Quest';
+import Questao from './pages/Quest/Questao';
 import Equipe from './pages/Equipe/Equipe';
 import './App.css';
 
@@ -12,7 +12,7 @@ function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   useEffect(() => {
-    // Check if the user has a saved token
+    // Checa se o usuário tem um token salvo
     const token = localStorage.getItem('jwt-token');
     if (token) {
       setIsAuthenticated(true);
@@ -40,7 +40,7 @@ function App() {
           <NavLink to="/" className="brand">MAKAL QUEST</NavLink>
           <nav className="menu">
             <NavLink to="/">Home</NavLink>
-            <NavLink to="/produtos">Questões</NavLink>
+            <NavLink to="/quest">Questões</NavLink>
             <NavLink to="/sobre">Sobre</NavLink>
             <NavLink to="/equipe">Nossa Equipe</NavLink>
             <button onClick={handleLogout} className="logout-btn">Sair</button>
@@ -51,8 +51,8 @@ function App() {
           <Routes>
             <Route path="/sobre" element={<Sobre />} />
             <Route path="/" element={<Home />} />
-            <Route path="/produtos" element={<Produtos />} />
-            <Route path="/produtos/:id" element={<Questao />} />
+            <Route path="/quest" element={<Quest />} />
+            <Route path="/quest/:id" element={<Questao />} />
             <Route path="/equipe" element={<Equipe />} />
             <Route path="*" element={<Home />} />
           </Routes>

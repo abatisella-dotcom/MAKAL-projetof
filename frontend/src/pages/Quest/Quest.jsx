@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import styles from './Produtos.module.css';
+import styles from './Quest.module.css';
 
 const API = 'http://localhost:3050';
 
-function Produtos() {
+function Quest() {
   const [perguntas, setPerguntas] = useState([]);
   const [loading, setLoading] = useState(true);
   const [erro, setErro] = useState(null);
@@ -112,12 +112,12 @@ function Produtos() {
   });
 
   const handleVerQuestao = (id) => {
-    navigate(`/produtos/${id}`);
+    navigate(`/quest/${id}`);
   };
 
   return (
-    <div className={styles.produtosContainer}>
-      <h1 className={styles.produtosTitulo}>Nossas Questões</h1>
+    <div className={styles.questContainer}>
+      <h1 className={styles.questTitulo}>Nossas Questões</h1>
 
       {/* Sistema de Pesquisa / Filtros */}
       <div className={styles.filtrosWrapper}>
@@ -216,5 +216,5 @@ function Produtos() {
   );
 }
 
-export default Produtos;
+export default Quest;
 
