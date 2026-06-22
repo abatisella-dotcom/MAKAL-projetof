@@ -1,3 +1,5 @@
+
+
 const fs = require('fs');
 const pathModule = require('path');
 
@@ -24,6 +26,7 @@ app.use(express.json());
 
 // Servir arquivos estáticos do frontend (IniciandoJWT)
 app.use(express.static(path.join(__dirname, 'public')));
+
 
 // ============================================================
 // ROTA DE LOGIN
