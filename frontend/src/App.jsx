@@ -12,7 +12,7 @@ function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   useEffect(() => {
-    // Check if the user has a saved token
+    // chek se o usuario tem o token salvo
     const token = localStorage.getItem('jwt-token');
     if (token) {
       setIsAuthenticated(true);

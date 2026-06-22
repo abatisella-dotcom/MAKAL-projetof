@@ -21,7 +21,7 @@ function Produtos() {
   const [filtroAtivo, setFiltroAtivo] = useState({
     vestibular: '', ano: '', conteudo: '', pergunta: '', bncc: ''
   });
-
+//puxa dados
   useEffect(() => {
     const fetchTudo = async () => {
       try {
@@ -101,7 +101,7 @@ function Produtos() {
     setFiltroAtivo({ vestibular: '', ano: '', conteudo: '', pergunta: '', bncc: '' });
   };
 
-  // Lógica de filtragem usando o filtroAtivo
+  // Lógica de filtragem usando o filtroAtivo (funciona + de um filtro por)
   const perguntasFiltradas = perguntas.filter((p) => {
     const mv = !filtroAtivo.vestibular || (p.nome_vest?.toLowerCase().includes(filtroAtivo.vestibular.toLowerCase()));
     const ma = !filtroAtivo.ano || (p.ano_prova?.toString().includes(filtroAtivo.ano));
