@@ -7,7 +7,7 @@
 }
 
 .title {
-    color: #ffffff; 
+    color: #ffffff;
 }
 
 body {
@@ -20,29 +20,28 @@ body {
 
 .sobrenostexto {
 
-  font-family: "Rubik", sans-serif;
-  font-weight: bolder;
-  letter-spacing: -2px;
-  font-size: 76px;
-  color: #64b6ac;
-  line-height: 1.3cm;
-  margin: 0px;
-  text-shadow: 0 0 20px #68cfc3;
-  margin-top: 1cm;
+    font-family: "Rubik", sans-serif;
+    font-weight: bolder;
+    letter-spacing: -2px;
+    font-size: 76px;
+    color: #64b6ac;
+    line-height: 1.3cm;
+    margin: 0px;
+    text-shadow: 0 0 20px #68cfc3;
+    margin-top: 1cm;
 
 }
 
 p {
-    
-     font-family: "Rubik", sans-serif;
-     padding: 15px;
-     padding-left: 20px;
-     padding-right: 20px;
-     text-align: center;
-    }
-    
-    .divbranca1 {
-    margin-top: 1cm;
+
+    font-family: "Rubik", sans-serif;
+    padding: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+}
+
+.divbranca1 {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -56,8 +55,8 @@ p {
 
 .Cardsgrid {
     display: flex;
-    justify-content: center; 
+    justify-content: center;
     align-items: center;
-    gap: 0.5rem; 
-    flex-wrap: wrap; 
+    gap: 0.5rem;
+    flex-wrap: wrap;
 }

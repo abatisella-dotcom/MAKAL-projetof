@@ -1,9 +1,13 @@
 // src/config/auth.js
 const jwt = require('jsonwebtoken');
 
-// Pega a chave do arquivo .env ou usa uma padrão
+// Pega a chave do arquivo .env ou usa uma padrão seguro para desenvolvimento
+const rawSecret = process.env.JWT_SECRET;
+const SEGREDO = (rawSecret && rawSecret.trim()) || 'segredo_temporario_makal';
 
-const SEGREDO = process.env.JWT_SECRET || 'chave_padrao_mentirinha'; 
+if (!SEGREDO) {
+    console.warn('⚠️ JWT secret is empty. Using temporary development secret. Set JWT_SECRET in .env for production.');
+}
 
 // Essa função verifica se quem está acessando tem o Token (a pulseira VIP)
 function verificarToken(req, res, next) {

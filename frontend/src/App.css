@@ -2,7 +2,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton+SC&display=swap');
 
 :root {
-  color: #1f2937;
   background: #ffffff;
   line-height: 1.5;
 }
@@ -15,10 +14,10 @@
 
 body {
   margin: 0;
-  background: #fffcfc;
+  background-color: white;
   min-height: 100vh;
   font-family: "Rubik", sans-serif;
-  color: #1f2937;
+
 }
 
 #root {
@@ -29,6 +28,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  
 }
 
 .bkg {

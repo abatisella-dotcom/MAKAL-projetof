@@ -1,3 +1,5 @@
+
+
 const fs = require('fs');
 const pathModule = require('path');
 
@@ -5,8 +7,8 @@ const pathModule = require('path');
 const envPath = pathModule.join(__dirname, '.env');
 const envExamplePath = pathModule.join(__dirname, '.env.example');
 if (!fs.existsSync(envPath) && fs.existsSync(envExamplePath)) {
-  fs.copyFileSync(envExamplePath, envPath);
-  console.log('📋 Arquivo .env criado automaticamente a partir do .env.example');
+    fs.copyFileSync(envExamplePath, envPath);
+    console.log('📋 Arquivo .env criado automaticamente a partir do .env.example');
 }
 
 require('dotenv').config();
@@ -25,43 +27,49 @@ app.use(express.json());
 // Servir arquivos estáticos do frontend (IniciandoJWT)
 app.use(express.static(path.join(__dirname, 'public')));
 
-// ============================================================
-// USUÁRIOS DE MENTIRINHA FIXOS (MOCK USERS)
-// ============================================================
-const USUARIOS_DE_MENTIRINHA = [
-    { username: 'admin', password: '123' },
-    { username: 'aluno', password: '123' }
-];
 
 // ============================================================
 // ROTA DE LOGIN
 // ============================================================
 app.post('/login', (req, res) => {
-    const { username, password } = req.body;
+    const { username: rawUsername, password: rawPassword } = req.body;
 
-    // Procura o usuário cadastrado
-    const usuario = USUARIOS_DE_MENTIRINHA.find(
-        u => u.username.toLowerCase() === username.toLowerCase() && u.password === password
-    );
+    const username = rawUsername ? String(rawUsername).trim() : '';
+    const password = rawPassword ? String(rawPassword).trim() : '';
 
-    if (usuario) {
+    if (!username || !password) {
+        return res.status(400).json({ auth: false, message: 'Usuário e senha são obrigatórios!' });
+    }
+
+
+    // Pega as credenciais corretas do arquivo .env e aplica trim
+    const usuarioCorreto = (process.env.AUTH_USER || 'admin').trim();
+    const senhaCorreta = (process.env.AUTH_PASSWORD || '123').trim();
+
+    // Pega as credenciais corretas do arquivo .env
+    const usuarioCorreto = process.env.AUTH_USER;
+    const senhaCorreta = process.env.AUTH_PASSWORD;
+
+    // Compara valores normalizados
+    if (username.toLowerCase() === usuarioCorreto.toLowerCase() && password === senhaCorreta) {
         const jwt = require('jsonwebtoken');
-        // Gera o token com o ID 1 e tempo de expiração de 1 hora
-        const token = jwt.sign({ userId: 1, username: usuario.username }, SEGREDO, { expiresIn: '1h' });
-        return res.json({ auth: true, token: token, username: usuario.username });
+        // Gera o token com o nome do usuário e tempo de expiração de 1 hora
+        const token = jwt.sign({ username: username }, SEGREDO, { expiresIn: '1h' });
+        return res.json({ auth: true, token: token, username: username });
     }
 
     // Se errar as credenciais
     return res.status(401).json({ auth: false, message: 'Usuário ou senha incorretos!' });
 });
 
+
 // ============================================================
 // ROTA DO PAINEL SECRETO (EXERCÍCIO JWT)
 // ============================================================
 app.get('/painel-secreto', verificarToken, (req, res) => {
-    res.json({ 
-        message: 'Parabéns, você acessou o painel secreto!', 
-        seuId: req.userId 
+    res.json({
+        message: 'Parabéns, você acessou o painel secreto!',
+        seuId: req.userId
     });
 });
 
