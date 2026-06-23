@@ -32,17 +32,20 @@ app.use(express.static(path.join(__dirname, 'public')));
 // ROTA DE LOGIN
 // ============================================================
 app.post('/login', (req, res) => {
-    const { username, password } = req.body;
+    const { username: rawUsername, password: rawPassword } = req.body;
+
+    const username = rawUsername ? String(rawUsername).trim() : '';
+    const password = rawPassword ? String(rawPassword).trim() : '';
 
     if (!username || !password) {
         return res.status(400).json({ auth: false, message: 'Usuário e senha são obrigatórios!' });
     }
 
-    // Pega as credenciais corretas do arquivo .env
-    const usuarioCorreto = process.env.AUTH_USER || 'admin';
-    const senhaCorreta = process.env.AUTH_PASSWORD || '123';
+    // Pega as credenciais corretas do arquivo .env e aplica trim
+    const usuarioCorreto = (process.env.AUTH_USER || 'admin').trim();
+    const senhaCorreta = (process.env.AUTH_PASSWORD || '123').trim();
 
-    // Compara diretamente sem usar nenhum array
+    // Compara valores normalizados
     if (username.toLowerCase() === usuarioCorreto.toLowerCase() && password === senhaCorreta) {
         const jwt = require('jsonwebtoken');
         // Gera o token com o nome do usuário e tempo de expiração de 1 hora
