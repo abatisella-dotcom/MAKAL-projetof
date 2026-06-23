@@ -41,15 +41,14 @@ app.post('/login', (req, res) => {
         return res.status(400).json({ auth: false, message: 'Usuário e senha são obrigatórios!' });
     }
 
-<<<<<<< HEAD
+
     // Pega as credenciais corretas do arquivo .env e aplica trim
     const usuarioCorreto = (process.env.AUTH_USER || 'admin').trim();
     const senhaCorreta = (process.env.AUTH_PASSWORD || '123').trim();
-=======
+
     // Pega as credenciais corretas do arquivo .env
     const usuarioCorreto = process.env.AUTH_USER;
     const senhaCorreta = process.env.AUTH_PASSWORD;
->>>>>>> 6cb408e0686b1e0e003fec0a6b95272aa298add5
 
     // Compara valores normalizados
     if (username.toLowerCase() === usuarioCorreto.toLowerCase() && password === senhaCorreta) {
