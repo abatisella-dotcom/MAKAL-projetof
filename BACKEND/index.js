@@ -7,8 +7,8 @@ const pathModule = require('path');
 const envPath = pathModule.join(__dirname, '.env');
 const envExamplePath = pathModule.join(__dirname, '.env.example');
 if (!fs.existsSync(envPath) && fs.existsSync(envExamplePath)) {
-  fs.copyFileSync(envExamplePath, envPath);
-  console.log('📋 Arquivo .env criado automaticamente a partir do .env.example');
+    fs.copyFileSync(envExamplePath, envPath);
+    console.log('📋 Arquivo .env criado automaticamente a partir do .env.example');
 }
 
 require('dotenv').config();
@@ -54,13 +54,14 @@ app.post('/login', (req, res) => {
     return res.status(401).json({ auth: false, message: 'Usuário ou senha incorretos!' });
 });
 
+
 // ============================================================
 // ROTA DO PAINEL SECRETO (EXERCÍCIO JWT)
 // ============================================================
 app.get('/painel-secreto', verificarToken, (req, res) => {
-    res.json({ 
-        message: 'Parabéns, você acessou o painel secreto!', 
-        seuId: req.userId 
+    res.json({
+        message: 'Parabéns, você acessou o painel secreto!',
+        seuId: req.userId
     });
 });
 

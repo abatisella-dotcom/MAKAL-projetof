@@ -3,7 +3,7 @@ const jwt = require('jsonwebtoken');
 
 // Pega a chave do arquivo .env ou usa uma padrão
 
-const SEGREDO = process.env.JWT_SECRET || 'chave_padrao_mentirinha'; 
+const SEGREDO = process.env.JWT_SECRET; 
 
 // Essa função verifica se quem está acessando tem o Token (a pulseira VIP)
 function verificarToken(req, res, next) {

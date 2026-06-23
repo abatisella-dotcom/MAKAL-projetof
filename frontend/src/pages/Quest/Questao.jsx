@@ -68,7 +68,7 @@ function Questao() {
 
 
   const handleVoltar = () => {
-    navigate('/produtos');
+    navigate('/quest');
   };
 
   const toggleResposta = () => {
@@ -83,7 +83,7 @@ function Questao() {
     return (
       <div className={styles.errorContainer}>
         <h2></h2>
-        <button onClick={handleVoltar} className={styles.btnVoltar}>Voltar aos Produtos</button>
+        <button onClick={handleVoltar} className={styles.btnVoltar}>Voltar às Questões</button>
       </div>
     );
   }
